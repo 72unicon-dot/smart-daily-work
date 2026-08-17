@@ -1,0 +1,1 @@
+import App from "@/components/App";import SupabaseApp from "@/components/SupabaseApp";import {isConfigured} from "@/lib/supabase";export default function Page(){return isConfigured?<SupabaseApp/>:<App/>}
