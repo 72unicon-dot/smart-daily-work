@@ -1,2 +1,9 @@
 import {z} from "zod";
-export const reportSchema=z.object({work_date:z.string().min(1),title:z.string().min(2,"제목을 2자 이상 입력하세요").max(80),work_type:z.enum(["office","manufacturing"]),shift:z.string().max(30),completed:z.string().min(2,"완료 업무를 입력하세요").max(4000),in_progress:z.string().max(4000),issues:z.string().max(4000),actions:z.string().max(4000),next_plan:z.string().max(4000),support_request:z.string().max(4000),progress:z.number().min(0).max(100)});
+export const reportSchema=z.object({
+ work_date:z.string().min(1),title:z.string().min(2,"제목을 2자 이상 입력하세요").max(80),
+ work_type:z.enum(["office","manufacturing"]),shift:z.string().max(30),
+ completed:z.string().min(2,"완료 업무를 입력하세요").max(4000),in_progress:z.string().max(4000),
+ issue_category:z.enum(["none","장애","품질","안전","설비","기타"]),issues:z.string().max(4000),
+ actions:z.string().max(4000),action_result:z.string().max(4000),next_plan:z.string().max(4000),
+ support_request:z.string().max(4000),progress:z.number().min(0).max(100)
+});
