@@ -1,4 +1,6 @@
-import App from "@/components/App";
-import Workspace from "@/components/Workspace";
-import {isConfigured} from "@/lib/supabase";
-export default function Page(){return isConfigured?<Workspace/>:<App/>}
+import TaskDashboard from "@/components/TaskDashboard";
+import "./dashboard.css";
+
+export default function Page(){
+  return <TaskDashboard/>;
+}
